@@ -1,0 +1,16 @@
+{
+  "uuid": "9f3e3e2ea4194c7195b519b6808c4779",
+  "name": "HackSpire'26",
+  "slug": "hackspire26",
+  "starts_at": "2026-10-02T08:30:00.000Z",
+  "ends_at": "2026-10-03T10:30:00.000Z",
+  "city": "Kolkata",
+  "state": "West Bengal",
+  "country": "India",
+  "location": "Kolkata, West Bengal, India",
+  "is_online": false,
+  "hackathon_setting": {
+    "site": "https://www.hackspire.tech",
+    "reg_ends_at": "2026-09-20T18:29:00.000Z"
+  }
+}

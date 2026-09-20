@@ -1,0 +1,109 @@
+# Hackathon Alert Automation Configuration
+
+timezone: "Asia/Kolkata"
+
+# Ranking Weights
+weights:
+  b_tech_eligible: 100          # Must-have baseline: ineligible events will rank strictly below
+  final_year_friendly: 20       # Priority bonus for graduating batches
+  free_entry: 15                # Bonus for free registration
+  internship_or_ppo: 25         # High value career outcome
+  reputed_organizer: 20         # Reputable institute / top tech brand
+  prize_pool_weight: 15         # Scaled relative to prize money (up to 15 pts)
+  urgency_bonus: 10             # Applied if registration deadline <= 3 days left
+  accommodation: 15             # Provided free accommodation on campus/venue
+
+# Section Caps & Thresholds
+sections:
+  sort_within_section: "score"   # "score" | "deadline_first" (events closing <= 24h are always placed first)
+  section_a:
+    name: "Hyderabad Hackathons"
+    cap: 10
+    modes: ["offline", "hybrid"]
+  section_b:
+    name: "High-Popularity Picks"
+    cap: 5
+    min_score: 110.0            # Quality gate: only high-caliber hackathons qualify
+    reserve_india_slots: 2      # Ensure at least 2 picks are India-based (if they meet min_score)
+    modes: ["offline", "hybrid", "online"]
+
+# Filtering rules
+filtering:
+  min_hours_left: 2.0           # Drop events with < 2 hours left (impractical to apply)
+  recruitment_exclusion_keywords:
+    - "hiring challenge"
+    - "coding contest"
+    - "coding challenge"
+    - "coding competition"
+    - "hiring test"
+    - "recruitment challenge"
+    - "job assessment"
+    - "recruitment test"
+
+# Location keywords for Section A
+hyderabad_keywords:
+  - "hyderabad"
+  - "secunderabad"
+  - "gachibowli"
+  - "hitec city"
+  - "madhapur"
+  - "medchal"
+  - "kukatpally"
+  - "telangana"
+  - "kondapur"
+  - "cyberabad"
+  - "shamshabad"
+  - "jubilee hills"
+  - "banjara hills"
+
+# Whitelisted reputed organizers
+reputed_organizers:
+  - "google"
+  - "microsoft"
+  - "amazon"
+  - "flipkart"
+  - "devfolio"
+  - "mlh"
+  - "major league hacking"
+  - "iit"
+  - "iiit"
+  - "nit"
+  - "bits"
+  - "tcs"
+  - "infosys"
+  - "accenture"
+  - "uber"
+  - "adobe"
+  - "meta"
+  - "nvidia"
+  - "intel"
+  - "oracle"
+  - "salesforce"
+  - "atlassian"
+  - "goldman sachs"
+  - "morgan stanley"
+  - "jp morgan"
+
+# Enabled scraping sources
+sources:
+  unstop: true
+  devfolio: true
+  devpost: true
+  mlh: true
+  hackerearth: true
+
+# Request delays & retries
+scraping:
+  request_delay_seconds: 2.0
+  timeout_seconds: 15
+  max_retries: 3
+  backoff_factor: 2.0
+
+# Notification channels
+notifiers:
+  telegram:
+    enabled: true
+  email:
+    enabled: false               # Disabled by default, requires no secrets
+  whatsapp:
+    enabled: false              # Documented stub

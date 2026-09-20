@@ -1,0 +1,54 @@
+{
+  "id": 1737808,
+  "public_url": "hackathons/hackcelestial-30-pillai-university-navi-mumbai-1737808",
+  "title": "HackCelestial 3.0",
+  "organization_id": 2057931,
+  "type": "hackathons",
+  "subtype": "online_coding_challenge",
+  "regn_open": 1,
+  "updated_at": "2026-09-13T11:59:43+05:30",
+  "region": "offline",
+  "visibility": "public",
+  "details": "<p>Overview: HackCelestial is a high-energy, 24-hour innovation sprint...</p><ul><li>Free Accommodation (Accommodation within the campus)</li><li>Food Accessibility (Breakfast, Lunch, Dinner)</li></ul><p>Prize Pool: ₹1,50,000</p><p>Perks: Participation Certificate, Goodies, Internship opportunities</p>",
+  "short_id": "gkRaEjG",
+  "organisation": {
+    "id": 2057931,
+    "name": "Pillai University, Navi Mumbai",
+    "public_url": "c/pillai-university-navi-mumbai-2057931"
+  },
+  "seo_url": "https://unstop.com/hackathons/hackcelestial-30-pillai-university-navi-mumbai-1737808",
+  "status": "LIVE",
+  "isPaid": true,
+  "prizes": [
+    {
+      "id": 3844813,
+      "rank": "Prize Pool",
+      "cash": 150000,
+      "currency": "fa-rupee"
+    }
+  ],
+  "address_with_country_logo": {
+    "id": 1818399,
+    "address": "Dr. K. M. Vasudevan Pillai Campus, Plot No. 10, Sector 16, New Panvel East, Panvel, Navi Mumbai, Maharashtra 410206",
+    "city": "Navi Mumbai"
+  },
+  "payment_services": [
+    {
+      "id": 719504,
+      "amount": 1500
+    }
+  ],
+  "filters": [
+    { "name": "Engineering Students" },
+    { "name": "Undergraduate" }
+  ],
+  "end_date": "2026-09-27T23:59:00+05:30",
+  "regnRequirements": {
+    "opportunity_id": 1737808,
+    "start_regn_dt": "2026-08-17T16:00:00+05:30",
+    "end_regn_dt": "2026-09-27T23:59:00+05:30",
+    "min_team_size": 1,
+    "max_team_size": 5,
+    "eligibility": "{\"engineering\":[{\"course\":\"btech\",\"passoutYear\":[\"all\"]}]}"
+  }
+}
