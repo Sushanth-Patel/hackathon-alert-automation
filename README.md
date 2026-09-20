@@ -114,7 +114,7 @@ Edit `config.yaml` to change:
 
 ---
 
-## ◈ EMAIL MODULE `[DISABLED BY DEFAULT]`
+## ◈ EMAIL ADD-ON [DISABLED BY DEFAULT]
 
 Email delivery is built in but switched off. To enable it:
 
