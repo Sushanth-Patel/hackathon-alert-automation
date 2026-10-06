@@ -1,8 +1,6 @@
 """Unit tests for UTC to Asia/Kolkata timezone conversion and deadline calculations."""
 
-from datetime import datetime, timezone, timedelta
-from dateutil import parser as date_parser
-from zoneinfo import ZoneInfo
+from datetime import datetime, timezone
 from models import Hackathon, IST
 
 

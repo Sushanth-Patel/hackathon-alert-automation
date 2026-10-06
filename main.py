@@ -9,26 +9,28 @@ deduplicates in SQLite, and dispatches an HTML digest to Telegram.
 from __future__ import annotations
 import argparse
 import logging
+from pathlib import Path
 import sys
 import time
-from pathlib import Path
 import yaml
 from dotenv import load_dotenv
 
-# Load environment variables from local .env if present
-load_dotenv()
-from storage import Storage
-from enrich import HackathonEnricher
-from ranker import Ranker
-from formatters.telegram_fmt import format_digest
 from formatters.email_fmt import format_email_digest
-from notifiers.telegram import TelegramNotifier
+from formatters.telegram_fmt import format_digest
+from models import Hackathon, RawHackathon
 from notifiers.email_smtp import EmailNotifier
-from sources.unstop import UnstopSource
+from notifiers.telegram import TelegramNotifier
+from ranker import Ranker
 from sources.devfolio import DevfolioSource
 from sources.devpost import DevpostSource
 from sources.hackerearth import HackerEarthSource
 from sources.mlh import MLHSource
+from sources.unstop import UnstopSource
+from storage import Storage
+from enrich import HackathonEnricher
+
+# Load environment variables from local .env if present
+load_dotenv()
 
 # Configure UTF-8 for console output (prevents Windows charmap codec errors)
 if sys.platform == "win32":

@@ -3,7 +3,6 @@
 import json
 from pathlib import Path
 from bs4 import BeautifulSoup
-import pytest
 
 from sources.unstop import UnstopSource
 from sources.devfolio import DevfolioSource

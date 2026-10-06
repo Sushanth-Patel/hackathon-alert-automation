@@ -4,7 +4,6 @@ from __future__ import annotations
 import logging
 import re
 from typing import Any, Optional
-from datetime import datetime
 from bs4 import BeautifulSoup, Tag
 from dateutil import parser as date_parser
 from models import RawHackathon, IST

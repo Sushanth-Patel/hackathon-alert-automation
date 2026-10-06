@@ -4,7 +4,7 @@ Normalized schema and raw intermediate representations.
 
 from __future__ import annotations
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
+from datetime import datetime
 from zoneinfo import ZoneInfo
 from typing import Any, Optional
 import math
