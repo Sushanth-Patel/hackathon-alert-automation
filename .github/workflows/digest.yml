@@ -2,10 +2,10 @@ name: Hackathon Alert Automation Digest
 
 on:
   schedule:
-    # 7:30 AM IST = 02:00 UTC
-    - cron: "0 2 * * *"
-    # 6:30 PM IST = 13:00 UTC
-    - cron: "0 13 * * *"
+    # 8:00 AM IST = 02:30 UTC
+    - cron: "30 2 * * *"
+    # 6:00 PM IST = 12:30 UTC
+    - cron: "30 12 * * *"
   workflow_dispatch:
 
 concurrency:

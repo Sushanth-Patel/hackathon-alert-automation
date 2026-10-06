@@ -5,7 +5,7 @@
 **New hackathons in Hyderabad. Delivered to your Telegram. Twice a day. Zero cost.**
 
 ![Status](https://img.shields.io/badge/STATUS-ONLINE-00F0FF?style=for-the-badge&labelColor=0A0A1F)
-![Schedule](https://img.shields.io/badge/SCAN-07:30%20%7C%2018:30%20IST-8B5CF6?style=for-the-badge&labelColor=0A0A1F)
+![Schedule](https://img.shields.io/badge/SCAN-08:00%20%7C%2018:00%20IST-8B5CF6?style=for-the-badge&labelColor=0A0A1F)
 ![Delivery](https://img.shields.io/badge/DELIVERY-TELEGRAM-00F0FF?style=for-the-badge&labelColor=0A0A1F)
 ![Cost](https://img.shields.io/badge/COST-%240-8B5CF6?style=for-the-badge&labelColor=0A0A1F)
 
@@ -15,7 +15,7 @@
 
 ## ◈ SYSTEM OVERVIEW
 
-At **07:30 IST** and **18:30 IST**, the automation runs on its own:
+At **08:00 IST** and **18:00 IST**, the automation runs on its own:
 
 | Stage | Action |
 |:---:|:---|

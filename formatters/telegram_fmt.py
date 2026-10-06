@@ -156,7 +156,7 @@ def format_digest(section_a: list[Hackathon], section_b: list[Hackathon]) -> lis
         for h in section_b:
             blocks.append(format_hackathon_block(h))
 
-    footer = "\n🔔 <i>Stay tuned for the next digest at 7:30 AM / 6:30 PM IST!</i>"
+    footer = "\n🔔 <i>Stay tuned for the next digest at 8:00 AM / 6:00 PM IST!</i>"
     blocks.append(footer)
 
     # Combine blocks without splitting inside a hackathon block

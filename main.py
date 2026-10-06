@@ -1,6 +1,6 @@
 """Hackathon Alert Automation Orchestrator.
 
-Twice a day (7:30 AM IST and 6:30 PM IST), fetches new hackathons from
+Twice a day (8:00 AM IST and 6:00 PM IST), fetches new hackathons from
 Unstop, Devfolio, Devpost, MLH, and HackerEarth, enriches with Gemini / regex fallback,
 ranks for B.Tech students (prioritizing Hyderabad and high-popularity events),
 deduplicates in SQLite, and dispatches an HTML digest to Telegram.
