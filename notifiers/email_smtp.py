@@ -30,7 +30,7 @@ class EmailNotifier(BaseNotifier):
             self.host = host or os.getenv("SMTP_HOST", "smtp.gmail.com")
             self.port = int(port or os.getenv("SMTP_PORT", "587"))
             self.user = user or os.getenv("SMTP_USER", "")
-            self.password = password or os.getenv("SMTP_PASSWORD", "")
+            self.password = password or os.getenv("SMTP_PASSWORD") or os.getenv("SMTP_APP_PASSWORD", "")
             self.recipient = recipient or os.getenv("EMAIL_TO", "")
         else:
             self.host = ""

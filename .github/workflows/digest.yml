@@ -21,12 +21,13 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.11"
           cache: "pip"
@@ -38,7 +39,7 @@ jobs:
 
       - name: Cache SQLite database (fallback mechanism)
         id: db-cache
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: hackathons.db
           key: hackathons-db-${{ github.run_id }}
@@ -53,7 +54,7 @@ jobs:
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
           SMTP_USER: ${{ secrets.SMTP_USER }}
-          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD || secrets.SMTP_APP_PASSWORD }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
         run: |
           python main.py
@@ -69,6 +70,7 @@ jobs:
               echo "No database changes to commit."
             else
               git commit -m "chore(db): update hackathons.db with sent records and cache [skip ci]"
+              git pull --rebase --autostash origin main || true
               git push || echo "Push failed; database will be retained via actions/cache fallback."
             fi
           fi
@@ -82,7 +84,7 @@ jobs:
           if [ -n "$TELEGRAM_BOT_TOKEN" ] && [ -n "$TELEGRAM_CHAT_ID" ]; then
             ERROR_MSG="⚠️ <b>Hackathon Alert Workflow Failed</b>%0A%0AThe GitHub Actions scheduled digest run encountered an error.%0APlease check workflow logs: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
             curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-              -d "chat_id=${TELEGRAM_CHAT_ID}" \
-              -d "text=${ERROR_MSG}" \
-              -d "parse_mode=HTML" || true
+              --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+              --data-urlencode "text=${ERROR_MSG}" \
+              --data-urlencode "parse_mode=HTML" || true
           fi
