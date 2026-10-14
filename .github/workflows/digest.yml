@@ -2,10 +2,10 @@ name: Hackathon Alert Automation Digest
 
 on:
   schedule:
-    # 8:00 AM IST = 02:30 UTC
-    - cron: "30 2 * * *"
-    # 6:00 PM IST = 12:30 UTC
-    - cron: "30 12 * * *"
+    # 8:00 AM IST = 02:30 UTC (scheduled at 02:25 UTC to avoid GitHub Actions peak :30 queue backlog)
+    - cron: "25 2 * * *"
+    # 8:00 PM IST = 14:30 UTC (scheduled at 14:25 UTC to avoid GitHub Actions peak :30 queue backlog)
+    - cron: "25 14 * * *"
   workflow_dispatch:
 
 concurrency:
@@ -69,6 +69,13 @@ jobs:
               git push || echo "Push failed; database will be retained via actions/cache fallback."
             fi
           fi
+
+      - name: Keep workflow active (prevent GitHub 60-day auto-disable)
+        if: always()
+        uses: gautamkrishnar/keepalive-workflow@v2
+        with:
+          committer_username: "github-actions[bot]"
+          committer_email: "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Send failure alert to Telegram on error
         if: failure()
